@@ -1,0 +1,335 @@
+/* ============================================
+   Saklar Kecil, Dampak Besar — kampanye hemat energi
+   Palet: hijau hutan + kuning matahari, kertas hangat
+   ============================================ */
+
+:root {
+  --bg: #f7f4ec;
+  --bg-soft: #f1ecdd;
+  --ink: #23291f;
+  --ink-soft: #565f4d;
+  --forest: #2f4a31;
+  --forest-dark: #1e3220;
+  --leaf: #6b8f4e;
+  --sun: #e8b23b;
+  --sun-soft: #f4d998;
+  --line: #ddd4b8;
+  --paper: #fffdf6;
+
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --sans: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --max: 1040px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { max-width: 100%; display: block; }
+
+a { color: inherit; }
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 0.4em;
+  color: var(--forest-dark);
+}
+
+p { max-width: 62ch; }
+
+.lede { font-size: 1.15rem; color: var(--ink-soft); }
+
+/* ---------- Header ---------- */
+
+header.site {
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+}
+
+.brand {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--forest-dark);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.brand span { color: var(--sun); }
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--forest);
+  border-bottom-color: var(--sun);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+.menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--forest-dark);
+  margin: 5px 0;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 72px 0 56px;
+}
+
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.eyebrow-tag {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--leaf);
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+  max-width: 12ch;
+}
+
+.hero .tagline {
+  font-size: 1.2rem;
+  color: var(--forest);
+  font-family: var(--serif);
+  font-style: italic;
+  margin: 18px 0 20px;
+  max-width: 30ch;
+}
+
+.hero .lede { margin-bottom: 24px; }
+
+.btn {
+  display: inline-block;
+  background: var(--forest);
+  color: var(--paper);
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  border: 1px solid var(--forest);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.btn:hover { background: var(--forest-dark); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--forest);
+  margin-left: 10px;
+}
+.btn-ghost:hover { background: var(--bg-soft); }
+
+.hero-art {
+  animation: rise 0.9s ease both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-art { animation: none; }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Sections ---------- */
+
+section { padding: 56px 0; }
+
+section + section { border-top: 1px solid var(--line); }
+
+.section-head { max-width: 56ch; margin-bottom: 36px; }
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ---------- Alur kampanye (sequence) ---------- */
+
+.flow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+.flow-step {
+  position: relative;
+  padding: 0 20px 0 0;
+}
+
+.flow-step .num {
+  font-family: var(--serif);
+  font-size: 2.6rem;
+  color: var(--sun);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.flow-step h3 { font-size: 1.05rem; margin-bottom: 6px; }
+.flow-step p { font-size: 0.95rem; color: var(--ink-soft); }
+
+.flow-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 22px;
+  right: -6px;
+  width: 12px;
+  height: 1px;
+  background: var(--line);
+}
+
+/* ---------- Cards (minimal, no shadow kit) ---------- */
+
+.fact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.fact-list li {
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: 16px;
+}
+.fact-list li:last-child { border-bottom: 1px solid var(--line); }
+.fact-list .mark { color: var(--sun); font-family: var(--serif); font-size: 1.3rem; line-height: 1.3; }
+
+/* ---------- Teaser ---------- */
+
+.teaser {
+  background: var(--forest);
+  color: var(--sun-soft);
+  border-radius: 4px;
+  padding: 36px;
+}
+.teaser h2 { color: var(--paper); }
+.teaser p { color: var(--sun-soft); max-width: 52ch; }
+.teaser a.btn { background: var(--sun); border-color: var(--sun); color: var(--forest-dark); }
+.teaser a.btn:hover { background: var(--sun-soft); }
+
+/* ---------- Identity block ---------- */
+
+.identity {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  font-size: 0.95rem;
+}
+.identity dt { color: var(--ink-soft); font-size: 0.82rem; margin-bottom: 4px; }
+.identity dd { margin: 0; font-family: var(--serif); font-size: 1.1rem; color: var(--forest-dark); }
+
+.chartbox {
+  max-width: 640px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 28px;
+}
+
+/* ---------- Footer ---------- */
+
+footer.site {
+  border-top: 1px solid var(--line);
+  padding: 28px 0;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+footer.site .wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 760px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--paper);
+    flex-direction: column;
+    gap: 0;
+    border-bottom: 1px solid var(--line);
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a {
+    padding: 14px 28px;
+    width: 100%;
+    border-bottom: 1px solid var(--line);
+  }
+  .menu-toggle { display: block; }
+
+  .hero .wrap { grid-template-columns: 1fr; }
+  .hero-art { order: -1; max-width: 220px; margin: 0 auto; }
+  .two-col { grid-template-columns: 1fr; }
+  .flow { grid-template-columns: 1fr; gap: 28px; }
+  .flow-step::after { display: none; }
+  .identity { grid-template-columns: 1fr; }
+}
