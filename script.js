@@ -1,4 +1,3 @@
-// Saklar Kecil, Dampak Besar — interaksi landing page (single page)
 
 document.addEventListener("DOMContentLoaded", function () {
   var toggle = document.querySelector(".menu-toggle");
@@ -15,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Tandai link nav aktif sesuai section yang sedang terlihat
   var sections = document.querySelectorAll("main section[id]");
   var navAnchors = document.querySelectorAll(".nav-links a");
 
@@ -35,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   sections.forEach(function (s) { observer.observe(s); });
 
-  // Render grafik kebiasaan boros energi (Data & Fakta)
   var canvas = document.getElementById("chartKebiasaan");
   if (canvas && window.Chart) {
     new Chart(canvas, {
