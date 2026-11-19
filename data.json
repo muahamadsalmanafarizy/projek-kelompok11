@@ -1,0 +1,76 @@
+{
+  "angket": {
+    "judul": "Kesadaran Hemat Energi Warga Sekolah",
+    "responden": 120,
+    "tanggal": "November 2026",
+    "pertanyaan": [
+      {
+        "id": 1,
+        "teks": "Apakah Anda selalu mematikan lampu saat meninggalkan ruangan?",
+        "kategori": "Kebiasaan",
+        "jawaban": {
+          "Selalu": 15,
+          "Sering": 28,
+          "Kadang-kadang": 42,
+          "Jarang": 25,
+          "Tidak Pernah": 10
+        }
+      },
+      {
+        "id": 2,
+        "teks": "Apakah Anda mencabut charger setelah selesai mengisi daya?",
+        "kategori": "Kebiasaan",
+        "jawaban": {
+          "Selalu": 10,
+          "Sering": 18,
+          "Kadang-kadang": 35,
+          "Jarang": 38,
+          "Tidak Pernah": 19
+        }
+      },
+      {
+        "id": 3,
+        "teks": "Seberapa paham Anda tentang dampak pemborosan energi?",
+        "kategori": "Pemahaman",
+        "jawaban": {
+          "Sangat Paham": 12,
+          "Paham": 30,
+          "Cukup Paham": 45,
+          "Kurang Paham": 25,
+          "Tidak Paham": 8
+        }
+      },
+      {
+        "id": 4,
+        "teks": "Apakah sekolah sudah cukup mensosialisasikan hemat energi?",
+        "kategori": "Sosialisasi",
+        "jawaban": {
+          "Sangat Cukup": 8,
+          "Cukup": 22,
+          "Biasa Saja": 40,
+          "Kurang": 35,
+          "Sangat Kurang": 15
+        }
+      }
+    ]
+  },
+  "observasi": {
+    "judul": "Observasi Kedisiplinan Hemat Energi per Ruangan",
+    "periode": "Oktober – November 2026",
+    "ruangan": ["Kelas X", "Kelas XI", "Kelas XII", "Lab Komputer", "Perpustakaan", "Ruang Guru"],
+    "indikator": {
+      "Lampu dimatikan saat kosong (%)": [45, 52, 60, 70, 75, 85],
+      "AC/kipas dimatikan saat kosong (%)": [38, 45, 55, 65, 68, 80],
+      "Perangkat tidak standby (%)": [30, 35, 40, 60, 50, 72]
+    }
+  },
+  "ringkasan": {
+    "fakta": [
+      "Hanya 12,5% responden yang selalu mematikan lampu saat meninggalkan ruangan.",
+      "Hampir 48% siswa jarang atau tidak pernah mencabut charger setelah selesai mengisi daya.",
+      "42% warga sekolah menilai sosialisasi hemat energi di sekolah masih kurang atau sangat kurang.",
+      "Ruang guru memiliki tingkat kedisiplinan hemat energi tertinggi (85% lampu dimatikan saat kosong).",
+      "Kelas X memiliki kebiasaan hemat energi paling rendah — hanya 45% yang mematikan lampu saat ruangan kosong."
+    ]
+  }
+}
