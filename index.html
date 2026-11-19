@@ -121,12 +121,53 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Kebiasaan boros energi yang paling sering ditemukan</h2>
-        <p class="lede">Referensi umum kebiasaan hemat energi di sekolah — akan diperbarui dengan hasil angket dan observasi sekolah kita sendiri.</p>
+        <p class="lede">Data dari angket dan observasi warga sekolah sebagai bukti nyata kondisi pemahaman hemat energi.</p>
       </div>
       <div class="chartbox">
         <canvas id="chartKebiasaan" height="260" aria-label="Grafik kebiasaan boros energi di sekolah" role="img"></canvas>
       </div>
-      <p style="font-size:0.85rem; color:var(--ink-soft); margin-top:14px;">Skala 1–5 menunjukkan seberapa sering kebiasaan ini dilaporkan/diamati di sekolah pada umumnya, bukan persentase pasti.</p>
+      <p id="keteranganKebiasaan" style="font-size:0.85rem; color:var(--ink-soft); margin-top:14px;">Memuat data…</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Tingkat pemahaman warga sekolah</h2>
+        <p class="lede">Seberapa jauh warga sekolah memahami pentingnya hemat energi — berdasarkan hasil angket.</p>
+      </div>
+      <div class="chart-grid">
+        <div class="chartbox">
+          <canvas id="chartPemahaman" aria-label="Grafik pemahaman hemat energi" role="img"></canvas>
+        </div>
+        <div class="chartbox">
+          <canvas id="chartSumberEnergi" aria-label="Grafik distribusi penggunaan energi sekolah" role="img"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Kebiasaan hemat energi siswa sehari-hari</h2>
+        <p class="lede">Persentase siswa yang mengaku rutin melakukan kebiasaan hemat energi — data dari angket.</p>
+      </div>
+      <div class="chartbox chartbox-wide">
+        <canvas id="chartKebiasaanSiswa" height="280" aria-label="Grafik kebiasaan hemat energi siswa" role="img"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Observasi: ruangan dengan peralatan menyala tanpa penghuni</h2>
+        <p class="lede">Hasil pengamatan selama 5 hari pada jam istirahat — bukti langsung pemborosan energi di sekolah.</p>
+      </div>
+      <div class="chartbox chartbox-wide">
+        <canvas id="chartObservasi" height="280" aria-label="Grafik observasi ruangan" role="img"></canvas>
+      </div>
     </div>
   </section>
 
