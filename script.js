@@ -228,4 +228,85 @@ document.addEventListener("DOMContentLoaded", function () {
         renderCharts(FALLBACK_DATA);
       });
   }
+
+  /* -------- Fase 3: Tantangan 7 Hari (Checklist) -------- */
+  var challengeCheckboxes = document.querySelectorAll("#challengeList input[type='checkbox']");
+  var challengeFill = document.getElementById("challengeFill");
+  var challengeText = document.getElementById("challengeText");
+
+  function updateChallenge() {
+    var total = challengeCheckboxes.length;
+    var checked = 0;
+    challengeCheckboxes.forEach(function (cb) {
+      if (cb.checked) checked++;
+    });
+    var pct = (checked / total) * 100;
+    if (challengeFill) challengeFill.style.width = pct + "%";
+    if (challengeText) challengeText.textContent = checked + " / " + total + " hari selesai";
+
+    /* Simpan ke localStorage */
+    var state = {};
+    challengeCheckboxes.forEach(function (cb) {
+      state[cb.getAttribute("data-day")] = cb.checked;
+    });
+    try {
+      localStorage.setItem("tantanganHematEnergi", JSON.stringify(state));
+    } catch (e) {}
+  }
+
+  /* Muat state dari localStorage */
+  try {
+    var savedState = JSON.parse(localStorage.getItem("tantanganHematEnergi"));
+    if (savedState) {
+      challengeCheckboxes.forEach(function (cb) {
+        var day = cb.getAttribute("data-day");
+        if (savedState[day]) cb.checked = true;
+      });
+    }
+  } catch (e) {}
+
+  challengeCheckboxes.forEach(function (cb) {
+    cb.addEventListener("change", updateChallenge);
+  });
+  updateChallenge();
+
+  /* -------- Fase 3: Ikrar / Pledge Counter -------- */
+  var pledgeBtn = document.getElementById("pledgeBtn");
+  var pledgeCountEl = document.getElementById("pledgeCount");
+
+  var PLEDGE_KEY = "ikrarHematEnergi_count";
+  var PLEDGED_KEY = "ikrarHematEnergi_done";
+
+  var currentCount = 0;
+  try {
+    currentCount = parseInt(localStorage.getItem(PLEDGE_KEY), 10) || 0;
+  } catch (e) {}
+
+  if (pledgeCountEl) pledgeCountEl.textContent = currentCount;
+
+  try {
+    if (localStorage.getItem(PLEDGED_KEY) === "true") {
+      if (pledgeBtn) {
+        pledgeBtn.textContent = "Kamu sudah berkomitmen!";
+        pledgeBtn.disabled = true;
+        pledgeBtn.style.opacity = "0.7";
+        pledgeBtn.style.cursor = "default";
+      }
+    }
+  } catch (e) {}
+
+  if (pledgeBtn) {
+    pledgeBtn.addEventListener("click", function () {
+      currentCount++;
+      if (pledgeCountEl) pledgeCountEl.textContent = currentCount;
+      pledgeBtn.textContent = "Terima kasih atas komitmenmu!";
+      pledgeBtn.disabled = true;
+      pledgeBtn.style.opacity = "0.7";
+      pledgeBtn.style.cursor = "default";
+      try {
+        localStorage.setItem(PLEDGE_KEY, currentCount);
+        localStorage.setItem(PLEDGED_KEY, "true");
+      } catch (e) {}
+    });
+  }
 });
